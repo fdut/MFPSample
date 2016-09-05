@@ -44,10 +44,15 @@ button {
   word-wrap: break-word;
 }
 
+#buttonDirectUrl {
+  position: absolute;
+  bottom: 40%;
+  width: 100%;
+}
 
 #button_content {
   position: absolute;
-  bottom: 40%;
+  bottom: 35%;
   width: 100%;
 }
 
@@ -57,10 +62,10 @@ button {
   width: 100%;
 }
 
-#ping_button, #adapter_button {
+#ping_button, #adapter_button, #url_button {
   display: block;
   margin: 0 auto;
-  height: 50px;
+  height: 30px;
   width: 240px;
 }
 

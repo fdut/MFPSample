@@ -107,19 +107,19 @@
     </mfp:ios>
     <mfp:windows>
         <mfp:windows8>
-            <mfp:sdkChecksum>0</mfp:sdkChecksum>
+            <mfp:sdkChecksum>3063471456</mfp:sdkChecksum>
             <mfp:security>
                 <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
             </mfp:security>
         </mfp:windows8>
         <mfp:windowsphone8>
-            <mfp:sdkChecksum>0</mfp:sdkChecksum>
+            <mfp:sdkChecksum>3063471456</mfp:sdkChecksum>
             <mfp:security>
                 <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
             </mfp:security>
         </mfp:windowsphone8>
         <mfp:windows10>
-            <mfp:sdkChecksum>0</mfp:sdkChecksum>
+            <mfp:sdkChecksum>3063471456</mfp:sdkChecksum>
             <mfp:security>
                 <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
             </mfp:security>
@@ -128,7 +128,7 @@
     </mfp:windows>
     <mfp:platformVersion>8.0.0.00-20160609-1443</mfp:platformVersion>
     <mfp:clientCustomInit enabled="false" />
-    <mfp:server runtime="mfp" url="http://192.168.1.55:9080" />
+    <mfp:server runtime="mfp" url="https://mobilefoundation-fdu-ks-server.mybluemix.net:443" />
     <mfp:directUpdateAuthenticityPublicKey />
     <mfp:languagePreferences>en</mfp:languagePreferences>
 </widget>

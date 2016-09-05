@@ -17,6 +17,9 @@ var titleText = null;
 var statusText =  null;
 var infoText = null;
 
+//var req = "http://mobilefoundation-fdu-ks-server.mybluemix.net/mfp/"
+var req = "http://mobilefoundation-fdu-ks-server.mybluemix.net:8888/mfp/"
+
 var app = {
     //initialize app
     "init": function init() {
@@ -24,6 +27,9 @@ var app = {
         WL.Logger.config({
             capture: false
         });
+
+        var buttonDirectUrl = document.getElementById("url_button");
+        buttonDirectUrl.addEventListener('click', app.testDirectUrl, false);
 
         var buttonElement = document.getElementById("ping_button");
         buttonElement.addEventListener('click', app.testServerConnection, false);
@@ -67,6 +73,34 @@ var app = {
      },
 
 
+     //test direct url connection
+     "testDirectUrl": function testDirectUrl() {
+
+       var req = "http://mobilefoundation-fdu-ks-server.mybluemix.net/mfp/"
+
+         titleText.innerHTML = "Contact Direct URL";
+         statusText.innerHTML = "Connecting to " + req;
+         infoText.innerHTML = "";
+
+         var xhr = new XMLHttpRequest();
+         xhr.open('GET', req, true);
+         xhr.send();
+
+         xhr.addEventListener("readystatechange", processRequest, false);
+
+         function processRequest(e) {
+           if (xhr.readyState == 4 && xhr.status == 200) {
+             var response = JSON.stringify(xhr.responseText);
+             console.log(response);
+             infoText.innerHTML = response;
+          } else {
+            console.log("Error: " + xhr.statusText + "" + xhr.responseText);
+            infoText.innerHTML = "Error: " + xhr.statusText;
+          }
+        }
+
+     },
+
     //test server connection
     "testServerConnection": function testServerConnection() {
 
@@ -100,12 +134,9 @@ var app = {
         statusText.innerHTML = "Connecting to Adapter ...";
         infoText.innerHTML = "";
 
-        var req = "http://mobilefoundation-fdu-ks-server.mybluemix.net/mfp/"
-
-        //var req = "adapters/hello/hello"
-//http://mobilefoundation-fdu-ks-server.mybluemix.net/mfp/
+        var req = "adapters/hello/hello"
+        //http://mobilefoundation-fdu-ks-server.mybluemix.net/mfp/
         //var request = new WLResourceRequest("adapters/hello/hello", WLResourceRequest.GET);
-
 
         var request = new WLResourceRequest(req, WLResourceRequest.GET);
 
