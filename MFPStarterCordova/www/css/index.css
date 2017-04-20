@@ -58,17 +58,27 @@ button {
 
 #button_adapter {
   position: absolute;
-  bottom: 30%;
+  text-align: center;
+  bottom: 28%;
   width: 100%;
+    /* padding-top: 5px; */
+  margin: 10px;
+    /* padding-left: 10%; */
+}
+#adapter_button, #secureadapter_button {
+  border-color: #008cba;
+  border-top-style: solid;
+  padding-top: 5px;
+  margin: auto;
+  padding-bottom: 5px;
 }
 
-#ping_button, #adapter_button, #url_button {
+#ping_button, #url_button {
   display: block;
   margin: 0 auto;
   height: 30px;
-  width: 240px;
+  width: 180px;
 }
-
 
 #logger {
   position: absolute;

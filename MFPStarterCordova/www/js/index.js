@@ -10,6 +10,7 @@ var wlInitOptions = {
 };
 
 function wlCommonInit() {
+
     app.init();
 }
 
@@ -18,7 +19,7 @@ var statusText = null;
 var infoText = null;
 
 //var req = "http://mobilefoundation-fdu-ks-server.mybluemix.net/mfp/"
-var req = "http://mobilefoundation-fdu-ks-server.mybluemix.net:8888/mfp/"
+var req = "http://mobilefoundation-fdu-ks-server.mybluemix.net:8888/mfp/";
 
 var app = {
     //initialize app
@@ -27,6 +28,9 @@ var app = {
         WL.Logger.config({
             capture: false
         });
+        
+        //initialize UserLoginChallengeHandler
+        userLoginChallengeHandler = UserLoginChallengeHandler();
 
         var buttonDirectUrl = document.getElementById("url_button");
         buttonDirectUrl.addEventListener('click', app.testDirectUrl, false);
@@ -36,6 +40,9 @@ var app = {
 
         var buttonAdapter = document.getElementById("adapter_button");
         buttonAdapter.addEventListener('click', app.testAdapterConnection, false);
+
+        var buttonAdapter = document.getElementById("secureadapter_button");
+        buttonAdapter.addEventListener('click', app.testSecureAdapterConnection, false);
 
         var buttonloggerinit = document.getElementById("logger_button_init");
         buttonloggerinit.addEventListener('click', app.testloggerbuttoninit, false);
@@ -154,6 +161,29 @@ var app = {
 
     },
 
+    //test secure adapter connection
+    "testSecureAdapterConnection": function testSecureAdapterConnection() {
+
+        titleText.innerHTML = "MobileFirst Security";
+        statusText.innerHTML = "Connecting to Secure Adapter ...";
+        infoText.innerHTML = "";
+
+        var req = "/adapters/ResourceAdapter/balance"
+    
+        var request = new WLResourceRequest(req, WLResourceRequest.GET);
+
+        statusText.innerHTML = req;
+
+        request.send().then(
+        function (response) {
+            WL.Logger.debug("Result: " + response.responseText);
+            infoText.innerHTML = "Success : " + response.responseText;
+        },
+        function (response) {
+            WL.Logger.debug("Failed to get result: " + JSON.stringify(response));
+            infoText.innerHTML = "Error : " + response.responseText;
+        });
+    },
 
     //test init logger
     "testloggerbuttoninit": function testloggerbuttoninit() {
@@ -244,5 +274,20 @@ var app = {
             });
     }
 
+};
 
+
+//Security Challenge
+function getBalance () {
+    var resourceRequest = new WLResourceRequest("/adapters/ResourceAdapter/balance", WLResourceRequest.GET);
+    resourceRequest.send().then(
+        function (response) {
+            WL.Logger.debug("Balance: " + response.responseText);
+            document.getElementById("resultLabel").innerHTML = "Balance: " + response.responseText;
+        },
+        function (response) {
+            WL.Logger.debug("Failed to get balance: " + JSON.stringify(response));
+            document.getElementById("resultLabel").innerHTML = "Failed to get balance.";
+        });
 }
+

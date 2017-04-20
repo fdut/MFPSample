@@ -22,6 +22,7 @@
   <!-- load script with wlCommonInit defined before loading cordova.js -->
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/UserLoginChallengeHandler.js"></script>
 
   <title>MFP Starter - Cordova</title>
 </head>
@@ -42,8 +43,13 @@
     <button id="ping_button">obtainAccessToken</button>
   </div>
 
-  <div id="button_adapter">
-    <button id="adapter_button">Test Adapter</button>
+  <div id="button_login">
+    <button id="login">login</button>
+  </div>
+ 
+  <div id="button_adapter">   
+     <button id="adapter_button">Test Unsecure Adapter</button>
+     <button id="secureadapter_button">Test Secure Adapter</button>
   </div>
 
   <div id="logger">

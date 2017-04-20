@@ -92,7 +92,7 @@
         <splash height="360" src="res/screen/windows/Wide310x150Logo.scale-240.png" width="744" />
     </platform>
     <mfp:android>
-        <mfp:sdkChecksum>2072696617</mfp:sdkChecksum>
+        <mfp:sdkChecksum>2957450250</mfp:sdkChecksum>
         <mfp:appChecksum>0</mfp:appChecksum>
         <mfp:security>
             <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
@@ -107,28 +107,28 @@
     </mfp:ios>
     <mfp:windows>
         <mfp:windows8>
-            <mfp:sdkChecksum>3063471456</mfp:sdkChecksum>
+            <mfp:sdkChecksum>0</mfp:sdkChecksum>
             <mfp:security>
                 <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
             </mfp:security>
         </mfp:windows8>
         <mfp:windowsphone8>
-            <mfp:sdkChecksum>3063471456</mfp:sdkChecksum>
+            <mfp:sdkChecksum>0</mfp:sdkChecksum>
             <mfp:security>
                 <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
             </mfp:security>
         </mfp:windowsphone8>
         <mfp:windows10>
-            <mfp:sdkChecksum>3063471456</mfp:sdkChecksum>
+            <mfp:sdkChecksum>0</mfp:sdkChecksum>
             <mfp:security>
                 <mfp:testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3" />
             </mfp:security>
         </mfp:windows10>
         <mfp:appChecksum>0</mfp:appChecksum>
     </mfp:windows>
-    <mfp:platformVersion>8.0.0.00-20160609-1443</mfp:platformVersion>
+    <mfp:platformVersion>8.0.0.00-20170328-091204</mfp:platformVersion>
     <mfp:clientCustomInit enabled="false" />
-    <mfp:server runtime="mfp" url="https://mobilefoundation-fdu-ks-server.mybluemix.net:443" />
+    <mfp:server runtime="mfp" url="http://172.16.183.1:8080" />
     <mfp:directUpdateAuthenticityPublicKey />
     <mfp:languagePreferences>en</mfp:languagePreferences>
 </widget>
