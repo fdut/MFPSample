@@ -107,7 +107,7 @@ public class AnalyticsResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/clientlogs")
 	@OAuthSecurity(enabled=false)
-	public Response clientlogs(@HeaderParam("body") String data) {
+	public Response clientlogs(String data) {
 		try {
 
 			System.err.println("==> Starting /callAnalyticsAPI/clientlogs processing: data = " + data );
