@@ -238,13 +238,15 @@ var app = {
     //test fake Analytics
     "testanalyticsbuttonfake": function testanalyticsbuttonfake() {
 
+        var event = {
+            fakeAction: "WL.Analytics Button Generate"
+        };
+
         titleText.innerHTML = "Analytics";
         infoText.innerHTML = "Log Analytics event (not send)" + JSON.stringify(event);
         statusText.innerHTML = "" ;
 
-        var event = {
-            fakeAction: "WL.Analytics Button Generate"
-        };
+  
         console.log("Generate fake analytics events");
 
 
@@ -255,13 +257,14 @@ var app = {
     //test send Analytics
     "testanalyticsbuttonsend": function testanalyticsbuttonsend() {
 
+        var event = {
+            sendAction: "WL.Analytics Button Send"
+        };
+
         titleText.innerHTML = "Analytics";
         infoText.innerHTML = "Log and Send Analytics event: " + JSON.stringify(event);
         statusText.innerHTML = "" ;
 
-        var event = {
-            sendAction: "WL.Analytics Button Send"
-        };
         console.log("Send analytics events");
         WL.Analytics.log(event, "Button send analytics events");
         WL.Analytics.send().then(function() {
